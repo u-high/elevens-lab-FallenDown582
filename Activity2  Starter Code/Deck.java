@@ -31,9 +31,11 @@ public class Deck {
   */
  public Deck(String[] ranks, String[] suits, int[] values) {
   /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+   cards = new ArrayList<Card>();
    for(int j = 0; j < suits.length; j++){
      for(int i = 0; i < values.length; i++){
-       cards.add(new Card(ranks[i], suits[j], values[i]));
+       Card newCard = new Card(ranks[i], suits[j], values[i]);
+       cards.add(newCard);
      }
    }
    size = cards.size();
@@ -69,7 +71,10 @@ public class Deck {
  public void shuffle() {
   /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
  }
-
+ public void addJokers(){
+   //cards.add(new Card ());
+   //cards.add(new Card ());
+ }
  /**
   * Deals a card from this deck.
   * @return the card just dealt, or null if all the cards have been

@@ -9,8 +9,9 @@ public class DeckTester {
   */
  public static void main(String[] args) {
    String[] suits = {"Clubs", "Diamonds", "Spades", "Hearts"};
-   int[] ptVals = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3};
+   int[] vals = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10};
    String[] ranks = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
-  Deck delta = new Deck(ranks, suits, ptVals);
+   Deck delta = new Deck(ranks, suits, vals);
+   System.out.print(delta);
  }
 }
