@@ -38,7 +38,11 @@ public class Card {
    pointValue = cardPointValue;
  }
 
-
+ public Card(Card cardIn){
+   rank = cardIn.rank();
+   suit = cardIn.suit();
+   pointValue = cardIn.pointValue();
+ }
  /**
   * Accesses this <code>Card's</code> suit.
   * @return this <code>Card's</code> suit.

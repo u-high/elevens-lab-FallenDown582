@@ -38,7 +38,7 @@ public class Deck {
        cards.add(newCard);
      }
    }
-   size = cards.size();
+   shuffle(cards);
  }
 
 
@@ -68,8 +68,18 @@ public class Deck {
   * Randomly permute the given collection of cards
   * and reset the size to represent the entire deck.
   */
- public void shuffle() {
-  /* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+ public void shuffle(ArrayList<Card> values) {
+  for(int i = values.size() -1; i > 0; i--){
+    double rand = Math.random() * i;
+    swap(values, i, (int)rand);
+  }
+  size = cards.size();
+ }
+ 
+ public static void swap(ArrayList<Card> values, int index1, int index2){
+   Card holder = new Card(values.get(index1));
+   values.set(index1, values.get(index2));
+   values.set(index2, holder);
  }
  public void addJokers(){
    //cards.add(new Card ());
@@ -82,9 +92,13 @@ public class Deck {
   */
  public Card deal() {
   /* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
-   Card tempCard = cards.get(size-1);
-   size -= 1;
-   return tempCard;
+   if(!isEmpty()){
+     Card tempCard = cards.get(size-1);
+     size -= 1;
+     return tempCard;
+   } else {
+     return null;
+   }
  }
 
  /**
